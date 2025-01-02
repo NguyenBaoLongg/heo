@@ -1,0 +1,1 @@
+# web/templatetags/__init__.py

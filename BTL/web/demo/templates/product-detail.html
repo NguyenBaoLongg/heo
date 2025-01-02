@@ -1,0 +1,132 @@
+{% extends "base.html" %}{% load static %}{% block product-detail %}{% for product in products %}
+<div class="body-background">
+    <div class="product-briefing">
+        <div class="content-left">
+            <img
+                src="{{product.image}}"
+                alt=""
+            />
+        </div>
+        <div class="content-right">
+            <div class="detail-wrapper">
+                <div class="pr-infos-heading">
+                    <span>TLU Fashion</span>
+                    <h1 class="title-section">
+                        {{product.title}}
+                    </h1>
+                </div>
+                <div
+                    style="margin-top: 10px; margin-bottom: 20px"
+                    class="pr-infos-price"
+                >
+                    <div class="flex flex-column">
+                        <div class="price-section flex">
+                            <div class="price-number">₫ {{product.price}}</div>
+                            <div class="pr-vat">
+                                (Giá đã bao gồm VAT)
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="btn-group">
+                    <form
+                        action="{% url 'addCart' product.id %}"
+                        method="POST"
+                        id="form-4"
+                    >
+                        {% csrf_token %} 
+                        <div class="pr-infos-variant">
+                            <div class="variant-swatch">
+                                <div class="swatch-header">
+                                    <span class="title">Bảng size</span>
+                                </div>
+                            </div>
+                            <div class="auth-form_gr">
+                                <label
+                                    for="size"
+                                    class="form-label"
+                                ></label>
+                                <select
+                                    name="size"
+                                    id="size"
+                                    class="auth-form_input select-size"
+                                >
+                                    <option value="" disabled selected>
+                                        Chọn kích thước
+                                    </option>
+                                    <option value="M">M</option>
+                                    <option value="L">L</option>
+                                    <option value="XL">XL</option>
+                                </select>
+                            </div>
+                        </div>
+                        <button class="button-add-cart">
+                            <i
+                                class="bx bxs-cart-add"
+                                style="color: #fff9f9"
+                            ></i>
+                            <span>Thêm vào giỏ hàng</span>
+                        </button>
+                    </form>
+                </div>
+                <div class="pr-infos--extrainfo">
+                    <div class="pr-extrainfo">
+                        <div class="pr-estdelivery">
+                            <div class="title">
+                                Thời gian giao hàng dự kiến
+                            </div>
+                            <div class="datetime">
+                                Từ 3 đến 5 ngày kể từ ngày đặt hàng
+                            </div>
+                        </div>
+                        <a
+                            href="#"
+                            id="btn-findsore"
+                            class="btn-link btn-store"
+                        >
+                            <span>Mua tại showroom</span>
+                        </a>
+                    </div>
+                </div>
+                <div class="pr-infos--disclaimer">
+                    <div class="pr-disclaimer">
+                        Miễn phí đổi trả hàng trong 30 ngày. Thuế và phí
+                        vận chuyển sẽ được bồi thường khi trả hàng.
+                    </div>
+                </div>
+                <div class="description-section">
+                    <strong class="type">Mô tả</strong>
+                    <div class="value">
+                        <div class="description">
+                            <p>
+                                {{product.description}}
+                            </p>
+                        </div>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endfor %} {% endblock product-detail %}
+
+<script>
+    const buttonDecrease = document.querySelector(".quantity-button_decrease");
+    const buttonIncrease = document.querySelector(".quantity-button_increase");
+    const inputValue = document.querySelector(".quantity-input");
+
+    buttonDecrease.onclick = () => {
+        var quantity = Number(inputValue.value);
+        quantity -= 1;
+        if (quantity < 0) {
+            quantity = 0;
+        }
+        inputValue.value = quantity;
+    };
+
+    buttonIncrease.addEventListener("click", () => {
+        var quantity = Number(inputValue.value);
+        quantity += 1;
+        inputValue.value = quantity;
+    });
+</script>

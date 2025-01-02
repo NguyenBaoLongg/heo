@@ -1,0 +1,55 @@
+{% extends "staff/staff-view.html" %} 
+{% block content %}
+<section class="main">
+    <div class="main-top">
+        <h1>List Invoice</h1>
+        <i class="fas fa-user-cog"></i>
+    </div>
+    <form class="d-flex search-section" role="search">
+        <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <div class="main-list">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Mã đơn</th>
+                    <th scope="col">Tên KH</th>
+                    <th scope="col">SĐT</th>
+                    <th scope="col">Địa Chỉ</th>
+                    <th scope="col">Tình trạng</th>
+                    <th scope="col" style="width:100px">Xem chi tiết</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for invoice in invoices %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{ invoice.id }}</td>
+                    <td>{{ invoice.name }}</td>
+                    <td>{{ invoice.phone }}</td>
+                    <td>{{ invoice.address }}</td>
+                    <td>{{ invoice.status }}</td>
+                    <td class="btn-manage btn-tool">
+                        <a
+                            href="{% url 'detailInvoice' invoice.id %}"
+                            class="btn-link"
+                            style="text-decoration: none"
+                        >
+                            Xem chi tiết
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+            
+        </table>
+    </div>
+</section>
+{% endblock content %}

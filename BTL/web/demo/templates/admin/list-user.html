@@ -1,0 +1,90 @@
+{% extends "admin/admin_view.html" %} {% block content %}
+<section class="main">
+    <div class="main-top">
+        <h1>List Users</h1>
+        <i class="fas fa-user-cog"></i>
+    </div>
+    <form class="d-flex search-section" role="search">
+        <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <div class="main-list">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Name</th>
+                    <th scope="col">Email</th>
+                    <th scope="col">Birth</th>
+                    <th scope="col">Gender</th>
+                    <th scope="col">Phone</th>
+                    <th scope="col">Address</th>
+                    <th scope="col">role</th>
+                    <th scope="col">tool</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for user in users %}
+                <tr>
+                    <th scope="row">{{forloop.counter }}</th>
+                    <td>{{user.name}}</td>
+                    <td>{{user.email}}</td>
+                    <td>{{user.dob}}</td>
+                    <td>{{user.gender}}</td>
+                    <td>{{user.phone}}</td>
+                    <td>{{user.address}}</td>
+                    <td>
+                        <form
+                            class="flex"
+                            method="POST"
+                            action="{% url 'decentralization' user.id %}"
+                            style="display:flex">
+                            {% csrf_token %}
+                            <select
+                                name="role"
+                                id="role"
+                                class="auth-form_input"
+                                style="
+                                    border: 1px solid #dbdbdb;
+                                    border-radius: 7px;
+                                    margin-right:5px">
+                                <option value="" disabled selected>...</option>
+                                <option
+                                    value="{{ user.role }}"
+                                    selected>
+                                    {{ user.role }}
+                                </option>
+                                <option value="User">User</option>
+                                <option value="Admin">Admin</option>
+                                <option value="Staff">Staff</option>
+                            </select>
+                            <button
+                                type="submit"
+                                class="btn btn-primary">
+                            Phân quyền
+                        </button>
+                        </form>
+                    </td>
+                    <td class="btn-manage btn-tool">
+                        <a
+                            href="{% url 'deleteUser' user.id %}"
+                            class="btn-link"
+                            style="text-decoration: none"
+                            >Xóa</a
+                        >
+                    </td>
+                    <td>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% endblock content %}

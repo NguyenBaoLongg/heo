@@ -1,0 +1,140 @@
+{% load static%}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <!<![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8" />
+        <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+        <meta name="description" content="" />
+        <meta name="viewport" content="width=device-width, initial-scale=1" />
+        <link
+            href="https://unpkg.com/boxicons@2.1.4/css/boxicons.min.css"
+            rel="stylesheet"
+        />
+        <link rel="stylesheet" href="{% static 'app/css/style.css' %}" />
+
+    </head>
+    <body>
+        <!--[if lt IE 7]>
+            <p class="browsehappy">
+                You are using an <strong>outdated</strong> browser. Please
+                <a href="#">upgrade your browser</a> to improve your experience.
+            </p>
+        <![endif]-->
+        <div id="app">
+            <header class="header">
+                <div class="header-top">
+                    <div class="container">
+                        <div class="header-left header-phone">
+                            <a href="">
+                                <i class="bx bx-phone-call"></i>
+                                <p>Call: +0123 456 789</p>
+                            </a>
+                        </div>
+                        <div class="header-right">
+                            <ul class="icon-social-list">
+                                <li><i class="bx bxl-facebook"></i></li>
+                                <li><i class="bx bxl-instagram"></i></li>
+                            </ul>
+                            {% if user %}
+                            <div class="header-user">
+                                <a
+                                    class="header-login-link"
+                                    style="
+                                        display: flex;
+                                        list-style: none;
+                                        justify-content: center;
+                                        align-items: center;
+                                        text-decoration: none;
+                                        color: black;
+                                    "
+                                    href="/user/info"
+                                >
+                                    <li><p>{{user.name }}</p></li>
+                                </a>
+                            </div>
+                            {% else %}
+                            <div class="header-login">
+                                <a
+                                    class="header-login-link"
+                                    style="
+                                        display: flex;
+                                        list-style: none;
+                                        justify-content: center;
+                                        align-items: center;
+                                        text-decoration: none;
+                                    "
+                                    href="/login"
+                                >
+                                    <li><i class="bx bx-user"></i></li>
+                                    <li><p>Login</p></li>
+                                </a>
+                            </div>
+                            {% endif %}
+                            <div class="header-dropdown">
+                                <ul>
+                                    <li>
+                                        VND <i class="bx bx-chevron-down"></i>
+                                    </li>
+                                    <li class="header-menu" style="z-index: 10">
+                                        <ul>
+                                            <li><a href="">USD</a></li>
+                                            <li><a href="">EUR</a></li>
+                                        </ul>
+                                    </li>
+                                </ul>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-middle">
+                    <div class="container">
+                        <div class="header-left">
+                            <div class="header-search">
+                                <div class="icon-search">
+                                    <i class="bx bx-search-alt-2"></i>
+                                </div>
+                                <input
+                                    type="search"
+                                    class="input-search"
+                                    placeholder="Search product ..."
+                                />
+                            </div>
+                        </div>
+                        <div class="header-center">
+                            <a href="/"><p>tlu fashion</p></a>
+                        </div>
+                        <div class="header-right">
+                            <div class="cart">
+                                <a href="/cart">
+                                    <i class="bx bx-cart"></i>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+                <div class="header-bottom">
+                    <div class="container">
+                        <div class="main-nav">
+                            <ul>
+                                <li><a href="/">Trang chủ</a></li>
+                                <li><a href="{% url "homeListProduct" %}">Sản phẩm</a></li>
+                                <li><a href="">Tin tức</a></li>
+                                <li><a href="">Liên hệ</a></li>
+                            </ul>
+                        </div>
+                    </div>
+                </div>
+            </header>
+            {% block cart %}{% endblock cart %}
+            {% block list-product %}{% endblock list-product %}
+            {% block contentUser %}{% endblock contentUser %} 
+            {% block product-detail %}{% endblock product-detail %} 
+            {% block content %}{% endblock content %}
+        </div>
+        <script src="" async defer></script>
+    </body>
+</html>

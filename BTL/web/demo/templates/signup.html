@@ -1,0 +1,160 @@
+{% load static %}
+<!DOCTYPE html>
+<!--[if lt IE 7]>      <html class="no-js lt-ie9 lt-ie8 lt-ie7"> <![endif]-->
+<!--[if IE 7]>         <html class="no-js lt-ie9 lt-ie8"> <![endif]-->
+<!--[if IE 8]>         <html class="no-js lt-ie9"> <![endif]-->
+<!--[if gt IE 8]>      <html class="no-js"> <![endif]-->
+<html>
+    <head>
+        <meta charset="utf-8">
+        <meta http-equiv="X-UA-Compatible" content="IE=edge">
+        <title></title>
+        <meta name="description" content="">
+        <meta name="viewport" content="width=device-width, initial-scale=1">
+        <link
+            rel="stylesheet"
+            href="{% static 'app/css/authentication.css' %}"
+        />
+    </head>
+    <body>
+        <div class="register-section">
+            <form action="/postsignup" method="POST" id="form-1" class="form">
+                {% csrf_token %}
+                <div class="register">
+                    <div class="auth-form_container">
+                        <div class="auth-form_header">
+                            <h3 class="auth-form_heading">Đăng ký</h3>
+                            <span class="switch-btn_auth"
+                                ><a href="/login">Đăng nhập</a></span
+                            >
+                        </div>
+                        <div class="auth-form_form">
+                            <div class="auth-form_gr">
+                                <label for="name" class="form-label"></label>
+                                <input
+                                    type="text"
+                                    name="name"
+                                    id="name"
+                                    class="auth-form_input"
+                                    placeholder="Nhập họ và tên"
+                                />
+                                <span class="form-message"></span>
+                            </div>
+        
+                            <div class="auth-form_gr">
+                                <label for="email" class="form-label"></label>
+                                <input
+                                    type="text"
+                                    name="email"
+                                    id="email"
+                                    class="auth-form_input"
+                                    placeholder="Email của bạn "
+                                />
+                                <span class="form-message"></span>
+                            </div>
+        
+                            <div class="auth-form_gr">
+                                <label for="phone" class="form-label"></label>
+                                <input
+                                    type="text"
+                                    name="phone"
+                                    id="phone"
+                                    class="auth-form_input"
+                                    placeholder="Nhập số điện thoại"
+                                />
+                                <span class="form-message"></span>
+                            </div>
+        
+                            <div class="auth-form_gr">
+                                <label for="password" class="form-label"></label>
+        
+                                <input
+                                    type="password"
+                                    name="password"
+                                    id="password"
+                                    class="auth-form_input"
+                                    placeholder="Mật khẩu của bạn"
+                                />
+                                <span class="form-message"></span>
+                            </div>
+        
+                            <div class="auth-form_gr">
+                                <label for="address" class="form-label"></label>
+                                <input
+                                    type="text"
+                                    name="address"
+                                    id="address"
+                                    class="auth-form_input"
+                                    placeholder="Nhập địa chỉ của bạn"
+                                />
+                                <span class="form-message"></span>
+                            </div>
+        
+                            <div class="auth-form_gr">
+                                <label for="dob" class="form-label"></label>
+                                <input
+                                    type="date"
+                                    name="dob"
+                                    id="dob"
+                                    class="auth-form_input"
+                                    placeholder="Ngày sinh"
+                                />
+                                <span class="form-message"></span>
+                            </div>
+        
+                            <div class="auth-form_gr">
+                                <label for="gender" class="form-label"></label>
+                                <select
+                                    name="gender"
+                                    id="gender"
+                                    class="auth-form_input"
+                                >
+                                    <option value="" disabled selected>
+                                        Chọn giới tính
+                                    </option>
+                                    <option value="male">Nam</option>
+                                    <option value="female">Nữ</option>
+                                    <option value="other">Khác</option>
+                                </select>
+                                <span class="form-message"></span>
+                            </div>
+                        </div>
+                        <div class="auth-form_aside">
+                            <p>
+                                Bằng việc đăng kí, bạn đã đồng ý với shopee về
+                                <a href="">điều khoản dịch vụ</a>
+                                &amp;
+                                <a href="">Chính sách bảo mật</a>
+                            </p>
+                        </div>
+                        <div
+                            class="register-error"
+                            style="
+                                color: red;
+                                display: flex;
+                                justify-content: center;
+                                padding-top: 15px;
+                            "
+                        >
+                            <p>{{ message }}</p>
+                        </div>
+                        <div class="auth-form_controls">
+                            <button class="form-submit">Đăng ký</button>
+                        </div>
+                    </div>
+                    <div class="auth-form_sociaty">
+                        <a href="" class="btn-icon btn-icon_size btn-facebook">
+                            <i class="bx bxl-facebook-circle icon-facebook"></i>
+                            <span>Kết nối với facebook</span>
+                        </a>
+                        <a href="" class="btn-icon btn-icon_size btn-gg">
+                            <i class="bx bxl-google"></i>
+                            <span>Kết nối với Google</span>
+                        </a>
+                    </div>
+                </div>
+            </form>
+        </div>
+        <script src="" async defer></script>
+    </body>
+</html>

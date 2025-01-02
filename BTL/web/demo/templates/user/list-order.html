@@ -1,0 +1,83 @@
+{% extends "base.html" %}{% load static %}
+{% block contentUser %}
+<link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.0/dist/css/bootstrap.min.css" rel="stylesheet">
+<link rel="stylesheet" href="{% static 'app/css/account_user.css' %}" />
+<section class="account-body">
+    <div class="container-fluid">
+        <div class="account">
+            <div class="left">
+                <div class="account-sidebar">
+                    <div class="account-avartar">
+                        <div class="line"><div class="name">Long</div></div>
+                        <div class="line">
+                            <a href="/logout" class="logout">
+                                <span>ĐĂNG XUẤT</span>
+                            </a>
+                        </div>
+                    </div>
+                    <div class="sidebar">
+                        <div class="sidebar__list">
+                            <div class="sidebar__item">
+                                <a href="/user/info" class="sidebar__link"
+                                    ><span>Thông tin cá nhân</span>
+                                </a>
+                            </div>
+                            <div class="sidebar__item active">
+                                <a href="/user/list-order" class="sidebar__link"
+                                    ><span>Thông tin đặt hàng</span>
+                                </a>
+                            </div>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="right">
+                <div class="account-info">
+                    <div class="account-page-title">
+                        <h1>THÔNG TIN CÁ NHÂN</h1>
+                    </div>
+                    <div class="main-list">
+                        <table class="table">
+                            <thead>
+                                <tr>
+                                    <th scope="col">#</th>
+                                    <th scope="col" >Mã đơn</th>
+                                    <th scope="col">Tên KH</th>
+                                    <th scope="col">SĐT</th>
+                                    <th scope="col">Địa Chỉ</th>
+                                    <th scope="col">Tình trạng</th>
+                                    <th scope="col" style="width:200px">Xem chi tiết</th>
+                                </tr>
+                            </thead>
+                            <tbody>
+                                {% for i in invoices %}
+                                <tr>                                    
+                                    <th scope="row">{{forloop.counter }}</th>
+                                    <td>{{i.id}}</td>
+                                    <td>{{i.name}}</td>
+                                    <td>{{i.phone}}</td>
+                                    <td>{{i.address}}</td>
+                                    {% if status == 'accepted' %}<td style="color:green" >{{i.status}}</td>
+                                    {% elif status == 'pending' %}<td style="color:#EFAC4D" >{{i.status}}</td>
+                                    {% else %}<p  style="display:flex"><td style="color:red" >{{i.status}}</td>{% endif %}
+                                    <td class="btn-manage btn-tool">
+                                        <a
+                                            href="{% url "detailOrder" i.id%}"
+                                            class="btn-link"
+                                            style="color:red"
+                                        >
+                                            Xem chi tiết
+                                        </a>
+                                    </td>
+                                </tr>
+                                {% endfor %}
+                            </tbody>
+                
+                        </table>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+</section>
+{% endblock contentUser %}

@@ -1,0 +1,94 @@
+{% extends "admin/admin_view.html" %} {% block content %}
+<section class="main">
+    <div class="main-top">
+        <h1>Update Product</h1>
+    </div>
+    <div class="main-list" style="margin: 30px auto">
+        {% for product in products %}
+        <form
+            class="mt-4"
+            method="POST"
+            action="{% url 'updateProduct' product.id %}"
+            style="height: 100%; width: 500px; margin: 50px auto"
+        >
+            {% csrf_token %}
+            <div class="form-group">
+                <label for="title">Tên sản phẩm</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    value="{{product.title}}"
+                    id="title"
+                    name="title"
+                />
+            </div>
+            <div class="form-group">
+                <label for="description">Giá sản phẩm</label>
+                <input
+                    type="text"
+                    class="form-control"
+                    id="price"
+                    name="price"
+                    value="{{product.price}}"
+                />
+            </div>
+            <div class="form-group">
+                <label for="image">Ảnh sản phẩm</label>
+                <input
+                    type="text"
+                    class="form-control file-input-image"
+                    id="image"
+                    name="image"
+                    value="{{product.image}}"
+                />
+                <div class="image-section"></div>
+            </div>
+            <div class="form-group mt-2">
+                <label for="category" class="form-label">Chọn danh mục</label>
+                <select
+                    name="category"
+                    id="category"
+                    class="auth-form_input"
+                    style="
+                        border: 1px solid #dbdbdb;
+                        width: 100%;
+                        padding: 0.375rem 0.75rem;
+                        border-radius: 7px;
+                    "
+                >
+                    <option value="" disabled selected>...</option>
+                    <option
+                        value="{{ product.category }}"
+                        product.category
+                        selected
+                    >
+                        {{ product.category }}
+                    </option>
+                    <option value="Nam">Nam</option>
+                    <option value="Nu">Nữ</option>
+                </select>
+            </div>
+            <div class="form-group">
+                <label for="description">Mô tả </label>
+                <textarea
+                    type="text"
+                    class="form-control"
+                    id="description"
+                    name="description"
+                    style="height: 200px"
+                >
+                {{product.description}}</textarea
+                >
+            </div>
+            <button
+                type="submit"
+                class="btn btn-primary"
+                style="background-color: #c96; margin-top: 20px; border: none"
+            >
+                Sửa sản phẩm
+            </button>
+        </form>
+        {% endfor %}
+    </div>
+</section>
+{% endblock content %}

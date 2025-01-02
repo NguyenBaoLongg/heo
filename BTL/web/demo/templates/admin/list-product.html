@@ -1,0 +1,71 @@
+{% extends "admin/admin_view.html" %} {% block content %}
+<section class="main">
+    <div class="main-top">
+        <h1>List Products</h1>
+        <i class="fas fa-user-cog"></i>
+    </div>
+    <form class="d-flex search-section" role="search">
+        <input
+            class="form-control me-2"
+            type="search"
+            placeholder="Search"
+            aria-label="Search"
+        />
+        <button class="btn btn-outline-success" type="submit">Search</button>
+    </form>
+    <div class="main-list">
+        <table class="table">
+            <thead>
+                <tr>
+                    <th scope="col">#</th>
+                    <th scope="col">Title</th>
+                    <th scope="col">Image</th>
+                    <th scope="col">Category</th>
+                    <th scope="col">Price</th>
+                    <th scope="col">Tool</th>
+                    <th scope="col">Tool</th>
+                </tr>
+            </thead>
+            <tbody>
+                {% for product in products %}
+                <tr>
+                    <th scope="row">{{ forloop.counter }}</th>
+                    <td>{{product.title}}</td>
+                    <td>
+                        <img
+                            src="{{product.image}}"
+                            alt=""
+                            style="width: 100px; height: 100px"
+                        />
+                    </td>
+                    <td>{{product.category}}</td>
+                    <td>{{product.price}}</td>
+                    <td class="btn-manage btn-tool">
+                        <a
+                            href="{% url 'deleteProduct' product.id %}"
+                            class="btn-link"
+                            data-id="{{ product.id }}"
+                            style="text-decoration: none"
+                        >
+                            Xóa
+                        </a>
+                    </td>
+                    <td class="btn-manage btn-tool">
+                        <a
+                            href="{% url 'updateProductView' product.id %}"
+                            class="btn-link"
+                            data-toggle="modal"
+                            data-id="{{ product.id }}"
+                            style="text-decoration: none"
+                        >
+                            Chỉnh sửa
+                        </a>
+                    </td>
+                </tr>
+                {% endfor %}
+            </tbody>
+        </table>
+    </div>
+</section>
+
+{% endblock content %}

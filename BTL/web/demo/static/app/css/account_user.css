@@ -1,0 +1,127 @@
+a {
+    color: #110e11 !important;
+    text-decoration: none;
+    outline: none;
+}
+ul {
+    margin-bottom: 0 !important;
+}
+
+a span {
+    color: #110e11;
+    text-decoration: none;
+    outline: none;
+}
+
+.account-body {
+    margin: 80px 0;
+    padding: 0 80px;
+}
+
+.container-fluid {
+    padding: 0 16px;
+    margin: auto;
+    width: 100%;
+}
+
+.account {
+    display: flex;
+    flex-wrap: wrap;
+    margin-right: -15px;
+    margin-left: -15px;
+}
+
+.account-body .left {
+    width: 28%;
+}
+
+.account-sidebar .sidebar {
+    padding: 0;
+}
+
+.sidebar__list {
+    display: flex;
+    flex-direction: column;
+    margin-top: 32px;
+    border: 1px solid #e7e7e7;
+}
+
+.account-sidebar .sidebar .sidebar__item {
+    padding: 20px 12px;
+    text-transform: capitalize;
+}
+
+.account-sidebar .sidebar .sidebar__item a {
+    display: flex;
+    align-items: center;
+    gap: 16px;
+    font-size: 16px;
+    font-weight: 600;
+    text-decoration: none !important;
+    text-transform: uppercase;
+}
+
+.account-sidebar .sidebar .active {
+    background-color: #F6F6F6;
+}
+
+/* right */
+.account-body .right {
+    width: 72%;
+}
+
+.account-info {
+    margin-left: 50px;
+    padding: 40px;
+    border: 1px solid #e7e7e7;
+}
+
+.account-info .account-page-title {
+    margin-bottom: 32px;
+}
+
+.account-form {
+    max-width: 100%;
+}
+
+.account-form .row{
+    flex-direction: column;
+}
+
+.item-input-form{
+    margin: 0 0 16px 0;
+}
+
+.account-form .form-label {
+    font-size: 12px;
+    font-weight: 500;
+    margin: 0 0 8px 0;
+}
+label {
+    display: inline-block;
+}
+
+.account-info .action-btn{
+    width: 150px;
+    background-color: #c96;
+    text-align: center;
+    border-radius: 5px;
+    color: white;
+    font-weight: 600;
+}
+
+.account-info .update-profile{
+    color: white;
+    font-weight: 600;
+}
+
+.account-avartar .logout {
+    text-decoration: underline;
+    font-weight: 700;
+}
+
+.account-avartar .name {
+    font-size: 30px;
+    font-weight: 700;
+    margin-bottom: 16px;
+}

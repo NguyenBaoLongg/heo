@@ -1,0 +1,59 @@
+{% extends "base.html" %} {% load static %} {% block content %}
+<div id="main">
+    <div class="intro-slider-container">
+        <div class="owl-item">
+            <div class="intro-slide"></div>
+        </div>
+    </div>
+    <div class="category-section">
+        <div class="container">
+            <div class="row">
+                <div class="left">
+                    <div class="banner banner-overlay">
+                        <a href=""
+                            ><img src="{% static "app/images/banner-2.jpg" %}"
+                            alt="" /></a
+                        >
+                    </div>
+                    <div class="banner banner-content">
+                        <h3 class="banner-title">Nam</h3>
+                        <a href="/products/male">Mua ngay</a>
+                    </div>
+                </div>
+                <div class="right">
+                    <div class="banner banner-overlay">
+                        <a href=""
+                            ><img src="{% static "app/images/banner-1.jpg" %}"
+                            alt="" /></a
+                        >
+                    </div>
+                    <div class="banner banner-content">
+                        <h3 class="banner-title">Nữ</h3>
+                        <a href="/products/female">Mua ngay</a>
+                    </div>
+                </div>
+            </div>
+        </div>
+    </div>
+    <hr
+        style="
+            border: none;
+            border-top: 1px solid #ebebeb;
+            margin: 30px auto 25px;
+        "
+    />
+    <div style="margin-bottom: 50px"></div>
+    <div class="container">
+        <div class="heading">
+            <h2 class="title">Sản phẩm</h2>
+        </div>
+        <div class="tab-content-carousel">
+            <div class="owl-stage">
+                <div class="owl-item" style="display: flex">
+                    {% block lst-product %}{% endblock lst-product %}
+                </div>
+            </div>
+        </div>
+    </div>
+</div>
+{% endblock content %}

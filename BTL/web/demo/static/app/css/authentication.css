@@ -1,0 +1,371 @@
+body,
+html {
+    height: 100%;
+    font-family: Poppins-Regular, sans-serif;
+}
+
+/*---------------------------------------------*/
+input {
+    outline: none;
+    border: none;
+}
+/*---------------------------------------------*/
+button {
+    outline: none !important;
+    border: none;
+    background: transparent;
+}
+
+.txt1 {
+    font-family: Poppins-Regular, serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #999999;
+}
+
+.txt2 {
+    display: flex;
+    align-items: center;
+    font-family: Poppins-Regular, serif;
+    font-size: 13px;
+    line-height: 1.5;
+    color: #666666;
+}
+
+.limiter {
+    width: 100%;
+    margin: 0 auto;
+}
+
+.container-login {
+    width: 100%;
+    min-height: 100vh;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    align-items: center;
+    padding: 15px;
+    background: #9053c7;
+    background: -webkit-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: -o-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: -moz-linear-gradient(-135deg, #c850c0, #4158d0);
+    background: linear-gradient(-135deg, #c850c0, #4158d0);
+}
+
+.wrap-login {
+    background: #fff;
+    border-radius: 10px;
+    overflow: hidden;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: space-between;
+    padding: 30px 50px 10px 50px;
+}
+
+.login-form-title {
+    font-family: Poppins-Bold, serif;
+    font-size: 30px;
+    text-transform: uppercase;
+    color: #333333;
+    line-height: 1.2;
+    text-align: center;
+    font-weight: bold;
+    width: 100%;
+    display: block;
+    padding-bottom: 40px;
+}
+
+/*---------------------------------------------*/
+.wrap-input {
+    position: relative;
+    width: 100%;
+    z-index: 1;
+    margin-bottom: 20px;
+}
+
+.input-login {
+    font-family: Poppins-Medium, serif;
+    font-size: 15px;
+    line-height: 1.5;
+    color: #666666;
+
+    display: block;
+    width: 100%;
+    background: #e6e6e6;
+    height: 50px;
+    border-radius: 25px;
+    padding: 0 30px 0 68px;
+}
+
+.symbol-input {
+    display: flex;
+    align-items: center;
+    position: absolute;
+    border-radius: 25px;
+    bottom: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+    padding-left: 35px;
+    pointer-events: none;
+    color: #666666;
+}
+
+.container-login-form {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    justify-content: center;
+    padding-top: 20px;
+}
+
+.login-form-btn {
+    font-size: 15px;
+    line-height: 1.5;
+    color: #fff;
+    text-transform: uppercase;
+
+    width: 100%;
+    height: 50px;
+    border-radius: 25px;
+    background: #57b846;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 0 25px;
+}
+
+.text-center {
+    display: flex;
+    justify-content: center;
+    padding-top: 40px;
+    padding-bottom: 10px;
+}
+
+.text-center a {
+    text-decoration: none;
+}
+
+.login-error {
+    color: red;
+    display: flex;
+    justify-content: center;
+}
+
+/* ================================= */
+/* SIGN UP */
+.login,
+.register {
+    width: 500px;
+    border-radius: 5px;
+    background-color: white;
+    overflow: hidden;
+    margin: 50px auto;
+    box-shadow: 5px 5px 15px rgba(0, 0, 0, 0.3);
+}
+
+.auth-form_exit div {
+    display: flex;
+    justify-content: right;
+    margin: 5px;
+}
+
+.icon-xmark,
+.icon-xmark_login {
+    font-size: 1.5rem;
+    padding: 5px;
+}
+
+.auth-form_container {
+    padding: 25px 32px 15px 32px;
+}
+
+.auth-form_header {
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.auth-form_heading {
+    font-size: 1.5rem;
+    font-weight: 400;
+    color: black;
+}
+.switch-btn_auth {
+    font-size: 0.9rem;
+    font-weight: 400;
+    color: #ee4d2d;
+    cursor: pointer;
+}
+
+.switch-btn_auth a {
+    color: #000;
+}
+
+.auth-form_form {
+    margin-bottom: 10px;
+}
+
+.auth-form_input {
+    width: 100%;
+    height: 40px;
+    margin-top: 16px;
+    padding: 0 12px;
+    font-size: 0.8rem;
+    border: 1px solid #dbdbdb;
+    border-radius: 5px;
+    outline: none;
+}
+
+.auth-form_input:focus {
+    border-color: #888;
+}
+
+.auth-form_aside p {
+    font-size: 0.8rem;
+    line-height: 1.2rem;
+    text-align: center;
+    padding: 0 7px;
+}
+
+.auth-form_aside a {
+    color: #c96;
+    text-decoration: none;
+}
+
+.auth-form_controls {
+    margin-top: 80px;
+    display: flex;
+    justify-content: right;
+}
+
+/*Button style*/
+.btn {
+    min-width: 142px;
+    min-height: 36px;
+    text-decoration: none;
+    border: none;
+    border-radius: 3px;
+    font-size: 1.15rem;
+    padding: 0;
+    outline: none;
+    cursor: pointer;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+}
+
+.btn.btn-primary {
+    color: white;
+    background-color: #ee4d2d;
+}
+
+.back {
+    margin-right: 8px;
+}
+
+.auth-form_sociaty {
+    background-color: #f1ebeb;
+    padding: 15px 36px;
+    display: flex;
+    justify-content: space-around;
+    margin-top: 24px;
+}
+
+.auth-form_sociaty a {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    text-decoration: none;
+    color: black;
+    border-radius: 5px;
+}
+
+.auth-form_sociaty i {
+    font-size: 1.6rem;
+}
+
+.btn-icon_size {
+    height: 32px;
+    font-size: 12px;
+    padding: 0 8px;
+}
+
+.btn-facebook {
+    background-color: #3a5a98;
+    color: white;
+}
+
+.icon-facebook,
+.auth-form_sociaty span {
+    color: white;
+}
+
+.auth-form_sociaty span {
+    margin: 0 32px;
+}
+
+.fa-google {
+    background: conic-gradient(
+            from -45deg,
+            #ea4335 110deg,
+            #4285f4 90deg 180deg,
+            #34a853 180deg 270deg,
+            #fbbc05 270deg
+        )
+        73% 55%/150% 150% no-repeat;
+    -webkit-background-clip: text;
+    background-clip: text;
+    color: transparent;
+    -webkit-text-fill-color: transparent;
+}
+
+.btn-gg {
+    background-color: white;
+}
+
+.btn-gg span {
+    color: #666;
+    background-color: white;
+}
+
+/*login*/
+.auth-form_help {
+    display: flex;
+    justify-content: right;
+    margin-top: 20px;
+}
+
+.separate {
+    display: block;
+    height: 16px;
+    margin: 0 12px;
+    border-left: 1px solid #666;
+}
+
+.text_need-help {
+    color: #666 !important;
+}
+
+.auth-form_gr.invalid .auth-form_input {
+    border: 1px solid red;
+}
+
+.invalid::placeholder {
+    color: red;
+}
+
+.form-message {
+    display: block;
+    color: red;
+    margin-top: 4px;
+}
+
+.form-submit {
+    padding: 10px 25px 10px 25px;
+    background-color: #c96;
+    border-radius: 5px;
+    color: white;
+    text-transform: uppercase;
+    font-weight: bold;
+}

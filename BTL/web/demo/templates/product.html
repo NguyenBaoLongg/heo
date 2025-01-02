@@ -1,0 +1,28 @@
+{% extends "home.html" %} {% block lst-product %}{% for product in products %}
+
+<div class="product" style="width: 22%; margin-left: 10px">
+    <a href="product/{{product.id}}/" style="height: 100%">
+        <div class="product-media">
+            <img src="{{product.image}}" alt="Image" />
+        </div>
+    </a>
+    <div class="product-body">
+        <div class="left">
+            <div class="product-title">
+                <a href="">{{product.title}}</a>
+            </div>
+            <div class="product-price">{{product.price}}</div>
+        </div>
+        <div class="right">
+            <a
+                href="product/{{product.id}}/"
+            >
+                {% csrf_token %}
+                <div class="auth-form_controls">
+                    <button class="form-submit button-add-cart ">Mua ngay</button>
+                </div>
+            </a>
+        </div>
+    </div>
+</div>
+{% endfor %} {% endblock lst-product %}
